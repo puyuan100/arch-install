@@ -7,7 +7,7 @@ Here I want to introduce how to install Arch linux. And this is prepared for mys
 ```
 ## The partition and mount 
 ```
-# fdisk /edv/sda
+# fdisk /dev/sda
 # g
 # +512M for EFI, +2G for /boot ,+8G for swap, +40G for /, rest for /home
 # w
@@ -62,7 +62,7 @@ Here I want to introduce how to install Arch linux. And this is prepared for mys
 # pacman -S xf86-video-inter (or xf86-video-amdgpu for AMD)(nvidia nvidia-utils for Nvidia)
 # pacman -S xorg
 # pacman -S sddm
-# pacman -S systemctl enable sddm
+# systemctl enable sddm
 # pacman -S plasma kde-applications xdg-user-dirs packagekit-qt5
 ```
 
