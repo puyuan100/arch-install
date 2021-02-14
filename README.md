@@ -36,7 +36,7 @@ Here I want to introduce how to install Arch linux. And this is prepared for mys
 # arch-chroot /mnt
 # ln -sf /usr/share/zoneinfo/Europe/Paris /etc/localtime
 # hwclock --systohc 
-# vim locale.gen (here to remove the "#" of "en_US.UTF-8 UTF-8")
+# vim /etc/locale.gen (here to remove the "#" of "en_US.UTF-8 UTF-8")
 # locale-gen
 # vim /etc/locale.conf (here write "LANG=en_US.UTF-8")
 # vim /etc/hostname (for example "arch")
@@ -59,7 +59,7 @@ Here I want to introduce how to install Arch linux. And this is prepared for mys
 
 ## instrall the kde
 ```
-# pacman -S xf86-video-inter (or xf86-video-amdgpu for AMD)(nvidia nvidia-utils for Nvidia)
+# pacman -S xf86-video-intel (or xf86-video-amdgpu for AMD)(nvidia nvidia-utils for Nvidia)
 # pacman -S xorg
 # pacman -S sddm
 # systemctl enable sddm
