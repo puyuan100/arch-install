@@ -51,7 +51,7 @@ Here I want to introduce how to install Arch linux. And this is prepared for mys
 ```
 ## Then login to do futher config
 ```
-# sudo dhcpcd (this aims to link internet)
+# dhcpcd (this aims to link internet)
 # useradd -m -G wheel haha (haha is an example)
 # passwd haha
 # EDITOR=vim visudo (to remove the "#" of the sentence "%wheel ALL=(ALL) ALL")
@@ -66,4 +66,11 @@ Here I want to introduce how to install Arch linux. And this is prepared for mys
 # pacman -S plasma kde-applications xdg-user-dirs packagekit-qt5
 ```
 
+## for mac (wifi broadcom wireless)
+```
+# rmmod b43
+# rmmod ssb
+# sudo pacman -S broadcom-wl-dkms
+# modprobe wl
 
+```
