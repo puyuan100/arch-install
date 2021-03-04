@@ -74,3 +74,13 @@ Here I want to introduce how to install Arch linux. And this is prepared for mys
 # modprobe wl
 
 ```
+
+## for VMware
+```
+# sudo pacman -S open-vm-tools
+# sudo pacman -S gtkmm
+# sudo pacman -S xf86-video-vmware
+# sudo pacman -S xf86-input-vmmouse
+# systemctl enable vmtoolsd
+```
+
