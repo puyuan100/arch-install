@@ -95,3 +95,23 @@ Here I want to introduce how to install Arch linux. And this is prepared for mys
 # systemctl enable vmtoolsd
 ```
 
+# Config
+
+## zsh
+```
+# sudo pacman -S zsh
+# chsh -s /bin/zsh
+# yay -S oh-my-zsh-git
+# cp /usr/share/oh-my-zsh/zshrc ~/.zshrc
+# yay -S zsh-syntax-highlighting zsh-autosuggestions
+# sudo vim ~/.zshrc
+  plugins=(
+  git
+  autojump
+  zsh-syntax-highlighting
+  zsh-autosuggestions
+  )
+# sudo ln -s /usr/share/zsh/plugins/zsh-syntax-highlighting /usr/share/oh-my-zsh/custom/plugins/
+# sudo ln -s /usr/share/zsh/plugins/zsh-autosuggestions /usr/share/oh-my-zsh/custom/plugins/
+
+```
