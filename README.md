@@ -40,7 +40,7 @@ Here I want to introduce how to install Arch linux. And this is prepared for mys
 # locale-gen
 # vim /etc/locale.conf (here write "LANG=en_US.UTF-8")
 # vim /etc/hostname (for example "arch")
-# vim /etc/hosts ( 127.0.0.1 localhosy \\ ::1 localhost \\ 127.0.1.1 hostname.localdomain hostname)
+# vim /etc/hosts ( 127.0.0.1 localhost \\ ::1 localhost \\ 127.0.1.1 hostname.localdomain hostname)
 # passwd (creat the password for root)
 # pacman -S grub efibootmgr networkmanager network-manager-applet wireless_tools wpa_supplicant dialog os-prober mtools dosfstools base-devel linux-headers dhcpcd
 # grub-install --target=x86_64-efi --efi-directory=/boot/EFI --bootloader-id=GRUB
@@ -57,7 +57,9 @@ Here I want to introduce how to install Arch linux. And this is prepared for mys
 # EDITOR=vim visudo (to remove the "#" of the sentence "%wheel ALL=(ALL) ALL")
 ```
 
-## instrall the kde
+## instrall the Desktop
+
+### kde
 ```
 # pacman -S xf86-video-intel (or xf86-video-amdgpu for AMD)(nvidia nvidia-utils for Nvidia)
 # pacman -S xorg
@@ -65,6 +67,15 @@ Here I want to introduce how to install Arch linux. And this is prepared for mys
 # systemctl enable sddm
 # pacman -S plasma kde-applications xdg-user-dirs packagekit-qt5
 ```
+### xfce 
+```
+# pacman -S xf86-video-intel
+# pacman -S xorg
+# pacman -S xfce4 xfce4-goodies
+# pacman -S lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings
+# systemctl enable lightdm
+```
+
 
 ## for mac (wifi broadcom wireless)
 ```
