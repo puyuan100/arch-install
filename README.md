@@ -11,6 +11,7 @@ Here I want to introduce how to install Arch linux. And this is prepared for mys
 # g
 # +512M for EFI, +2G for /boot ,+8G for swap, +40G for /, rest for /home
 # w
+# t (set EFI and SWAP)
 
 # mkfs.ext4 /.../... , this is for /boot,/home,/
 # mkswap /.../..., this is for swap
@@ -27,7 +28,7 @@ Here I want to introduce how to install Arch linux. And this is prepared for mys
 ```
 ## installation
 ```
-# pacstrap /mnt base linux linux-firmware vi vim
+# pacstrap /mnt base base-devel linux linux-firmware linux-headers intel-ucode ntfs-3g vi vim
 ```
 
 ## Configure the system
@@ -67,6 +68,15 @@ Here I want to introduce how to install Arch linux. And this is prepared for mys
 # systemctl enable sddm
 # pacman -S plasma kde-applications xdg-user-dirs packagekit-qt5
 ```
+
+### gnome
+```
+# pacman -S xf86-video-intel nvidia
+# pacman -S xorg
+# pacman -S gdm
+# pacman -S gnome
+```
+
 ### xfce 
 ```
 # pacman -S xf86-video-intel
