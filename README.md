@@ -7,15 +7,30 @@ Here I want to introduce how to install Arch linux. And this is prepared for mys
 ```
 ## The partition and mount 
 ```
+"Connect wifi"
+# ip link (find the name of the device, eg wlan0)
+# rkfill unblock all
+# ip link set wlan0 up
+# iwctl
+# device list
+# station wlan0 scan
+# station wlan0 get-networks
+# station wlan0 connect wifi_name
+# (then input the password)
+# exit
+# (done)
+
+
 # fdisk /dev/sda
 # g
 # +512M for EFI, +2G for /boot ,+8G for swap, +40G for /, rest for /home
 # w
 # t (set EFI and SWAP)
 
-# mkfs.ext4 /.../... , this is for /boot,/home,/
-# mkswap /.../..., this is for swap
 # mkfs.fat -F32 /.../..., this is for EFI
+# mkswap /.../..., this is for swap
+# mkfs.ext4 /.../..., this is for /, /home, /boot
+
 
 # mount /.../... /mnt
 # mkdir /mnt/boot
