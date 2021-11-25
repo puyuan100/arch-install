@@ -39,7 +39,7 @@ Here I want to introduce how to install Arch linux. And this is prepared for mys
 # mkdir /mnt/boot/efi
 # mkdir /mnt/home
 # mount /.../... /mnt/boot
-# mount /.../... /mnt/boot/EFI
+# mount /.../... /mnt/boot/efi
 # mount /.../... /mnt/home
 # swapon /.../...
 ```
