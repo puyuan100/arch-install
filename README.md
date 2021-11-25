@@ -1,15 +1,10 @@
 # arch-install
 Here I want to introduce how to install Arch linux. And this is prepared for myself.
 
-## set time
+## Connect to wifi
 ```
-# timedatectl set-ntp true
-```
-## The partition and mount 
-```
-"Connect wifi"
 # ip link (find the name of the device, eg wlan0)
-# rkfill unblock all
+# rkfill unblock all (if you can't run "ip link set wlan0 up")
 # ip link set wlan0 up
 # iwctl
 # device list
@@ -20,7 +15,14 @@ Here I want to introduce how to install Arch linux. And this is prepared for mys
 # exit
 # (done)
 
+```
 
+## set time
+```
+# timedatectl set-ntp true
+```
+## The partition and mount 
+```
 # fdisk /dev/sda
 # g
 # +512M for EFI, +2G for /boot ,+8G for swap, +40G for /, rest for /home
@@ -34,7 +36,7 @@ Here I want to introduce how to install Arch linux. And this is prepared for mys
 
 # mount /.../... /mnt
 # mkdir /mnt/boot
-# mkdir /mnt/boot/EFI
+# mkdir /mnt/boot/efi
 # mkdir /mnt/home
 # mount /.../... /mnt/boot
 # mount /.../... /mnt/boot/EFI
@@ -59,7 +61,7 @@ Here I want to introduce how to install Arch linux. And this is prepared for mys
 # vim /etc/hosts ( 127.0.0.1 localhost \\ ::1 localhost \\ 127.0.1.1 hostname.localdomain hostname)
 # passwd (creat the password for root)
 # pacman -S grub efibootmgr networkmanager network-manager-applet wireless_tools wpa_supplicant dialog os-prober mtools dosfstools base-devel linux-headers dhcpcd
-# grub-install --target=x86_64-efi --efi-directory=/boot/EFI --bootloader-id=GRUB
+# grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=GRUB
 # grub-mkconfig -o /boot/grub/grub.cfg
 # exit
 # umount -a
@@ -138,5 +140,5 @@ Here I want to introduce how to install Arch linux. And this is prepared for mys
   )
 # sudo ln -s /usr/share/zsh/plugins/zsh-syntax-highlighting /usr/share/oh-my-zsh/custom/plugins/
 # sudo ln -s /usr/share/zsh/plugins/zsh-autosuggestions /usr/share/oh-my-zsh/custom/plugins/
-
 ```
+
